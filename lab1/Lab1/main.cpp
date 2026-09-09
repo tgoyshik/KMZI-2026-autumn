@@ -2,8 +2,8 @@
 #include <cstdint>
 #include <cstring>
 #include <array>
-#include <clocale> 
-
+#include <clocale>
+#include <cstdio>
 class GaloisField {
 private:
     uint16_t poly;
@@ -198,15 +198,15 @@ int main() {
     gcm.init(key);
     gcm.encrypt(iv, p, 25, aad, 11, c, tag);
 
-    std::cout << "--- Ðåæèì ÁåëÒ-GCM ---" << std::endl;
+    std::cout << "--- ÃÃ¥Ã¦Ã¨Ã¬ ÃÃ¥Ã«Ã’-GCM ---" << std::endl;
 
-    std::cout << "Øèôðîòåêñò (HEX): ";
+    std::cout << "Ã˜Ã¨Ã´Ã°Ã®Ã²Ã¥ÃªÃ±Ã² (HEX): ";
     for (int i = 0; i < 25; ++i) {
         printf("%02X ", c[i]);
     }
     std::cout << std::endl;
 
-    std::cout << "Èìèòîâñòàâêà Tag (HEX): ";
+    std::cout << "ÃˆÃ¬Ã¨Ã²Ã®Ã¢Ã±Ã²Ã Ã¢ÃªÃ  Tag (HEX): ";
     for (int i = 0; i < 16; ++i) {
         printf("%02X ", tag[i]);
     }
